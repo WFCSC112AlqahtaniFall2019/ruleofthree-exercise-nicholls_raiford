@@ -4,18 +4,6 @@ using namespace std;
 //
 // Created by Benjamin Raiford on 10/17/19.
 //
-void swap(int* th , int* rhs, int  size){
-    cout<<"assignment operator"<<endl;
-    for(int i=0; i<size; i++){
-
-        th[i]=rhs[i];
-
-        cout<<rhs[i]<<endl;
-    }
-
-
-}
-
 
 IntList::IntList ( int size  , int initvalue) {
     if( size > 0){
@@ -50,8 +38,7 @@ IntList :: IntList ( const IntList & L ){
 
 //3) rewrite the copy assignment operator using an optimized method
 IntList& IntList:: operator =(IntList rhs ){
-    cout<<rhs.size_;
-    swap(this->list_, rhs.list_, rhs.size_);
+    swap(list_, rhs.list_);
     return *this;
     /*size_ = rhs . size_ ;
     if( rhs . size_ > 0){
